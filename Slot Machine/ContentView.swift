@@ -1,9 +1,21 @@
-//
-//  ContentView.swift
-//  Slot Machine
-//
-//  Created by Justice Ekeke on 05/02/2022.
-//
+/*
+ *Program Name: SlotMachine Game
+ *Date Last Modified: 06/02/2022
+ *Description: A simple Slot machine game that has a credits and bet counter.
+ *Revision History: Added functionality to UI design.
+ *Author: Justice Ekeke
+ *Student ID: 301160908
+ *Date: Febuary 06, 2022
+ *
+ *Author: Shrijan Karki
+ *Student ID: 301222636
+ *Date: Febuary 06, 2022
+ *
+ *Author: Basil Farooq
+ *Student ID: 301201128
+ *Date: Febuary 06, 2022
+ *
+ */
 
 import SwiftUI
 
@@ -61,7 +73,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                //cards
+                //slot cards
                 HStack
                 {
                     Spacer()
@@ -90,6 +102,8 @@ struct ContentView: View {
                 Spacer()
                 
                 //Button
+                VStack
+                {
                 Button(action: {
                     
                     //change slot image
@@ -113,8 +127,8 @@ struct ContentView: View {
                     Text("SPIN")
                         .bold()
                         .foregroundColor(.white)
-                        .padding(.all,10)
-                        .padding([.leading,.trailing], 30)
+                        .padding(.all,20)
+                        .padding([.leading,.trailing], 40)
                         .background(Color.pink)
                         .cornerRadius(20)
                 }
@@ -134,6 +148,25 @@ struct ContentView: View {
                         .padding([.leading,.trailing], 25)
                         .background(Color.blue)
                         .cornerRadius(20)
+                }
+                
+                    
+                //Quit Button
+                Button(action: {
+                    
+                    //app close logic
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                                     UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
+                                 }
+                }) {
+                    Text("Quit")
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.all,5)
+                        .padding([.leading,.trailing], 25)
+                        .background(Color.gray)
+                        .cornerRadius(20)
+                }
                 }
                 Spacer()
             }
