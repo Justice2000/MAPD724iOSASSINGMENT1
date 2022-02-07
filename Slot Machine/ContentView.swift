@@ -19,7 +19,7 @@ struct ContentView: View {
         ZStack
         {
             Rectangle()
-            .foregroundColor(Color(red: 200/255, green: 143/255, blue: 32/255))
+            .foregroundColor(Color(red: 255/255, green: 200/255, blue: 64/255))
             .edgesIgnoringSafeArea(.all)
             
             
@@ -44,11 +44,20 @@ struct ContentView: View {
                 Spacer()
                 
                 //credits counter
+               HStack
+                {
                 Text("Credits: " + String(credits))
                     .foregroundColor(.black)
                     .padding(.all,10)
                     .background(Color.white.opacity(0.5))
                     .cornerRadius(20)
+                
+                Text("Current Bet: 5")
+                    .foregroundColor(.black)
+                    .padding(.all,10)
+                    .background(Color.white.opacity(0.5))
+                    .cornerRadius(20)
+                }
                 
                 Spacer()
                 
