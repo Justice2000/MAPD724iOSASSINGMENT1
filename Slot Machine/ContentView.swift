@@ -24,6 +24,7 @@ struct ContentView: View {
     private  var symbols = ["apple", "star", "cherry"]
     @State private var numbers = [0, 0, 0]
     @State private var credits = 1000
+    @State private var score = 0
     private var bet = 5
     
     var body: some View {
@@ -56,6 +57,9 @@ struct ContentView: View {
                 Spacer()
                 
                 //credits counter
+            VStack
+            {
+                
                HStack
                 {
                 Text("Credits: " + String(credits))
@@ -70,6 +74,12 @@ struct ContentView: View {
                     .background(Color.white.opacity(0.5))
                     .cornerRadius(20)
                 }
+                Text("High Score: " + String(score))
+                    .foregroundColor(.white)
+                    .padding(.all,10)
+                    .background(Color.red.opacity(0.5))
+                    .cornerRadius(20)
+            }
                 
                 Spacer()
                 
@@ -118,6 +128,7 @@ struct ContentView: View {
                     {
                         //win
                         self.credits += self.bet * 10
+                        self.score += self.bet * 10
                     }
                     else{
                         self.credits -= self.bet
