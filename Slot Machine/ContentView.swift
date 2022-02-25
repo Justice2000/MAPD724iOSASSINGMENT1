@@ -217,14 +217,51 @@ struct HelpView: View {
                     
                     Text("INSTRUCTIONS")
                         .bold()
-                        .foregroundColor(.white)
+                        .foregroundColor(.blue)
+                    
                     
                 }.scaleEffect(2)
                 
                 Spacer()
                 
-                Text("HELP")
-                    .foregroundColor(.blue)
+                HStack
+                {
+                    Spacer()
+                    
+                    Text("The Slot Machine game version 3.0 is out now. The project which was set as an educational project now becoming a global sensation in the gaming arena.")
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                }
+                
+                Spacer()
+                
+                HStack
+                {
+                    Text("Players Guide:")
+                        .bold()
+                        .foregroundColor(.white)
+                    Spacer()
+                }
+                
+                VStack
+                {
+                    Text("‣ Current Bet: The amount player wants to use for betting in the game.")
+                        .foregroundColor(.white)
+                    Text("‣  Credits: The points which player wins by playing against its betting amount.")
+                        .foregroundColor(.white)
+                    Text("‣  High Score: World Record!. The highest score player achieves during a single session of the game.")
+                        .foregroundColor(.white)
+                    Text("‣  Spin: The central game button which spins all the different combinations and might get lucky for you to win the jackpot.")
+                        .foregroundColor(.white)
+                    Text("‣  Jackpot: Hurreyy!, The jackpot will be 10x of the betting amount.")
+                        .foregroundColor(.white)
+                    Text("‣  Reset: Start Over!, this button will help you to reset your game.")
+                        .foregroundColor(.white)
+                    Text("‣  Quit: You should take a rest too, so whenever you want you can quit by clicking the quit button")
+                        .foregroundColor(.white)
+                    Spacer()
+                }
             }
         }
     }
