@@ -171,6 +171,11 @@ struct ContentView: View {
                             DispatchQueue.main.asyncAfter(deadline: .now()) {
                                 UIApplication.shared.perform(#selector(NSXPCConnection.suspend))
                             }
+                            
+                            //store in persitent database
+                            let userDefaults = UserDefaults()
+                            userDefaults.set(self.score, forKey: "Highscore")
+                            
                         }) {
                             Text("Quit")
                                 .bold()
@@ -185,6 +190,7 @@ struct ContentView: View {
                         HStack
                         {
                             Spacer()
+                            //navigation link to next page
                             NavigationLink(destination: HelpView(), label: { Text("Help")
                             }).padding(.all,5)
                                 .padding([.leading,.trailing], 25)
